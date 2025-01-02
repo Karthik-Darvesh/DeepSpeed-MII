@@ -1,0 +1,28 @@
+{
+    "fp16": {
+        "enabled": true
+    },
+    "zero_optimization": {
+        "stage": 3,
+        "offload_optimizer": {
+            "device": "none",
+            "pin_memory": false
+        },
+        "offload_param": {
+            "device": "none",
+            "pin_memory": false
+        }
+    },
+    "activation_checkpointing": {
+        "partition_activations": true,
+        "contiguous_memory_optimization": true,
+        "cpu_checkpointing": false
+    },
+    "tensor_parallel": {
+        "enabled": false
+    },
+    "enable_cuda_graph": false,
+    "train_micro_batch_size_per_gpu": 1,
+    "gradient_accumulation_steps": 1,
+    "gradient_clipping": 1.0
+}
